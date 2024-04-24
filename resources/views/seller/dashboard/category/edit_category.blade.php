@@ -1,6 +1,5 @@
-@section('title','Add-Category') 
+@section('title','Update Category')
 @include('components.seller-header')
-
 
 
 <div class="page-wrapper">
@@ -11,9 +10,9 @@
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{route('seller.viewCategoryPage')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Add Category Form</li>
+                        <li class="breadcrumb-item active" aria-current="page">View Category </li>
                     </ol>
                 </nav>
             </div>
@@ -29,9 +28,9 @@
         <div class="row">
             <div class="col-xl-9 mx-auto">
                 <form id="formSubmit">
-                    <input type="hidden" id="url" value="/seller/add-category">
+                    <input type="hidden" id="url" value="/seller/update-category">
                     <input type="hidden" id="dataType" value="POST">
-                    <input type="hidden" name="_token" value="LcoydqmIVeeSsJm2SfgstfFVDOZO97lrPPt02Efn">
+                    <input type="hidden" name="id" value="{{$data->category_id}}">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="my-4 text-center text-primary">Category Update Form</h4>
@@ -42,9 +41,10 @@
                                 <br>
                             <div>
                         
-                                <input class="form-control" type="file" placeholder="Type Category Name" required
+                                <input class="form-control" type="file" placeholder="Type Category Name" 
                                     name="category_photo" id="imageInput"> 
-                                    <span class="text text-info text-sm pl-4 mt-2">if </span>
+                                    @csrf
+                                    <span class="text text-info text-sm pl-4" style="margin-left: 5px;"> If no category is chosen, display the previous image. </span>
                                     <br> <br>
                                 <div id="imagePreview">
                                     <img src="{{url('category')}}/{{$data->category_image}}" alt="" width="100px;">
@@ -54,7 +54,7 @@
                         <br>
 
                         <div class="card-footer text-center"> <br>
-                            <input type="submit" id="submitBtn" value="Add Category" class="btn btn-primary ">
+                            <input type="submit" id="submitBtn" value="Update Category" class="btn btn-primary ">
 
                             <button class="btn btn-primary" type="button" disabled
                                                             id="loadingBtn" style="display:none ; width:136px;"> <span
@@ -64,9 +64,6 @@
                                                         </button>
                         </div>
                         <br>
-                        
-
-
                     </div>
                 </form>
             </div>

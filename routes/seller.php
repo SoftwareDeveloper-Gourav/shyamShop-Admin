@@ -29,6 +29,7 @@ Route::get('/seller/add-category',[SellerCategoryController::class,'addCategoryP
 Route::get('/seller/view-category',[SellerCategoryController::class,'viewCategory'])->name('seller.viewCategoryPage');
 Route::get('/seller/edit-category/{id}',[SellerCategoryController::class,'sellerCategoryEdit'])->name('seller.edit-category.sellerCategoryEdit');
 Route::get('/seller/delete-category',[SellerCategoryController::class,'sellerDeleteCategory']);
+Route::post('/seller/update-category',[SellerCategoryController::class,'updateCategory']);
 
 
 Route::get('/seller/add-product',[SellerProductController::class,'addProductPage'])->name('seller.addProductPage');

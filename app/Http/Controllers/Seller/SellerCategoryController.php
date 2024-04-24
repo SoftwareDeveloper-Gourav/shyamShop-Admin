@@ -115,6 +115,31 @@ class SellerCategoryController extends Controller
   }
 
   // sellerDeleteCategory
+  // updateCategory
+   public function updateCategory(Request $request)
+   {
+     $category_name = $request->category_name;
+      $category_photo = $request->category_photo;
+
+      if($category_photo!=""){
+          $imageName = time() . '.' . $category_photo->getClientOriginalExtension();
+          $category_photo->move('category', $imageName);
+      }else{
+        $imageName = "";
+      }
+      $updateCategory = SellerCategoryModel::find($request->id);
+      $updateCategory->category_name = $category_name;
+      if($imageName!=""){
+      $updateCategory->category_image = $imageName;
+      }
+      $update = $updateCategory->save();
+        if($update){
+          return self::toastr(false,true,"success", "Success","Category Updated Successfull");
+        }else{
+          return self::toastr(false,false,"error", "Error","Category Updated Failed");
+        }
+   }
+  // updateCategory
      
  
 }

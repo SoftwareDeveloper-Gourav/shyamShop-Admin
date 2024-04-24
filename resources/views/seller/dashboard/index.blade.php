@@ -1,7 +1,9 @@
 @section('title', 'Seller Dashboard')
 @include('components.seller-header')
+
 <!--end header -->
 <!--start page wrapper -->
+
 <div class="page-wrapper">
     <div class="page-content">
         <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
@@ -520,8 +522,10 @@
         </div>
     </div>
 </div>
+
 <!--end page wrapper -->
 <!--start overlay-->
+
 <div class="overlay toggle-icon"></div>
 <!--end overlay-->
 <!--Start Back To Top Button-->
