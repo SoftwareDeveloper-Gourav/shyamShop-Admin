@@ -110,11 +110,10 @@
 <!--plugins-->
 <script src="{{ url('assets/js/jquery.min.js') }}"></script>
 <script src="{{ url('assets/js/formValidation.js') }}"></script>
-<script src="{{url('projectJs/formSubmitToastr.js')}}"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-        <script src="{{url('projectJs/alert_show.js')}}"></script>
-        <script src="{{url('projectJs/confirmFunction.js')}}"></script>
+<script src="{{url('projectJs/alert_show.js')}}"></script>
+<script src="{{url('projectJs/confirmFunction.js')}}"></script>
+<script src="{{url('projectJs/formSubmitToastr.js')}}"></script>      
         
 <!-- <script src="{{ url('assets/plugins/simplebar/js/simplebar.min.js') }}"></script> -->
 <script src="{{ url('assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>

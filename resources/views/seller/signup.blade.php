@@ -150,7 +150,7 @@
     <script src="{{ url('assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>
     <script src="{{ url('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="{{ url('projectJs/formSubmit.js') }}"></script>
+    <script src="{{ url('projectJs/sellerLogin.js') }}"></script>
     <!--Password show & hide js -->
     <script>
         $(document).ready(function() {

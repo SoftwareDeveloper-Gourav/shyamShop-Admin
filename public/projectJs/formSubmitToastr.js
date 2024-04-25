@@ -1,7 +1,13 @@
 // alert("form sunmit toastr file called");
 
+
 $("#formSubmit").validate({
-    rules: {},
+    rules: {
+        confirmPassword:{
+            equalTo:"#password",
+            minlength:4,
+        }
+    },
     messages: {},
     submitHandler: function (form, event) {
         event.preventDefault();

@@ -134,7 +134,7 @@
     <script src="{{ url('assets/js/jquery.min.js') }}"></script>
     <script src="{{ url('assets/js/formValidation.js') }}"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="{{ url('projectJs/formSubmit.js') }}"></script>
+    <script src="{{ url('projectJs/sellerLogin.js') }}"></script>
 
     <!--Password show & hide js -->
     <script>

@@ -10,7 +10,6 @@ use App\Models\SellerCategoryModel;
 
 class SellerCategoryController extends Controller
 {
-
   // toastr 
   public function toastr($refresh,$status,$icon,$title,$desc){
    $response = [
@@ -54,26 +53,36 @@ class SellerCategoryController extends Controller
   {
       $category_name = $request->category_name;
       $category_photo = $request->category_photo;
-      $imageName = time() . '.' . $category_photo->getClientOriginalExtension();
-      $category_photo->move('category', $imageName);
+      $imgExt = $category_photo->getClientOriginalExtension();
+      $imageName = time() . '.' . $imgExt;
+
+     
     
       $check_new_category = SellerCategoryModel::where([['category_name',$category_name],['category_admin',session('seller')]])->count();
-    if($check_new_category>0){
-        return self::toastr(false,false,"warning", "Warning","This Category Already exist");
-    }else{
-      $category_data = new SellerCategoryModel;
-      $category_data->category_name = $category_name;
-      $category_data->category_admin = session('seller');
-      $category_data->category_image = $imageName;
-      $save = $category_data->save();
-      if($save){
-        return self::toastr(false,true,"success", "Success","Category Saved");
+      if($imgExt=="png"||$imgExt=="jpg"||$imgExt=="jpeg"||$imgExt=="webp"){
+        $category_photo->move('category', $imageName);
+
+        if($check_new_category>0){
+          return self::toastr(false,false,"warning", "Warning","This Category Already exist");
+      }else{
+        $category_data = new SellerCategoryModel;
+        $category_data->category_name = $category_name;
+        $category_data->category_admin = session('seller');
+        $category_data->category_image = $imageName;
+        $save = $category_data->save();
+        if($save){
+          return self::toastr(false,true,"success", "Success","Category Saved");
+  
+        }else{
+          return self::toastr(false,false,"error", "Error","something wrong , please try again later");
+        }
+      
+      }
 
       }else{
-        return self::toastr(false,false,"error", "Error","something wrong , please try again later");
+        return self::toastr(false,false,"error", "Error","Choose Image only , please try again later");
       }
     
-    }
 }
     
      

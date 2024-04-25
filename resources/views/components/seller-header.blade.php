@@ -67,14 +67,22 @@
                     <a href="javascript:;" class="has-arrow">
                         <div class="parent-icon"><i class="bx bx-category"></i>
                         </div>
-                        <div class="menu-title">Product Management </div>
+                        <div class="menu-title">Category Management </div>
                     </a>
                     <ul>
                     <li> <a href="{{route('seller.addCategoryPage')}}"><i class='bx bx-radio-circle'></i>Add Category</a>
                         </li>
                         <li> <a href="{{route('seller.viewCategoryPage')}}"><i class='bx bx-radio-circle'></i>View Categories</a>
                         </li>
-
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class="bx bx-category"></i>
+                        </div>
+                        <div class="menu-title">Product Management </div>
+                    </a>
+                    <ul>
                         <li> <a href="{{route('seller.addProductPage')}}"><i class='bx bx-radio-circle'></i>Add Product</a>
                         </li>
                         <li> <a href="app-chat-box.html"><i class='bx bx-radio-circle'></i>View Product</a>
@@ -101,7 +109,7 @@
                     <a class="has-arrow" href="javascript:;">
                         <div class="parent-icon"><i class="bx bx-dollar-circle"></i>
                         </div>
-                        <div class="menu-title">Payment Gateway</div>
+                        <div class="menu-title">Payments</div>
                     </a>
                     <ul>
                         <li> <a href="content-grid-system.html"><i class='bx bx-radio-circle'></i>Grid System</a>
@@ -125,10 +133,10 @@
                     <ul>
 
 
-                        <li><a href="auth-basic-signin.html" target="_blank"><i class='bx bx-radio-circle'></i>Change credintials</a></li>
+                        <li><a href="{{route('seller.changeCredential')}}"><i class='bx bx-radio-circle'></i>Change credintials</a></li>
                        
-                        <li><a href="auth-basic-reset-password.html" target="_blank"><i
-                                    class='bx bx-radio-circle'></i>Reset Password</a></li>
+                        <li><a href="{{route('seller.logout')}}"><i
+                                    class='bx bx-radio-circle'></i>Logout</a></li>
                     </ul>
                 </li>
 

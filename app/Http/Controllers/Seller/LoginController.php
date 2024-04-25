@@ -9,6 +9,19 @@ use Crypt;
 
 class LoginController extends Controller
 {
+
+    // toastr 
+    public function toastr($refresh,$status,$icon,$title,$desc){
+      $response = [
+       'refresh'=>$refresh,
+       'status'=>$status,
+       'icon'=>$icon,
+       'title'=>$title,
+       'desc'=>$desc,
+     ];
+     echo json_encode($response);
+     }
+     // toastr 
     public function checkUsername($userName){
         $count = SellerModel::where('username',$userName)->first();
 
@@ -117,4 +130,32 @@ class LoginController extends Controller
       
     }
     // logout
+
+    // changeCredential 
+     public function changeCredential(Request $request)
+     {
+      $seller = SellerModel::find(session('seller'));
+      $password = decrypt($seller->password);
+      return view('seller.dashboard.credential.change_credential',['seller'=>$seller,'password'=>$password]);
+     }
+
+    // changeCredential 
+
+    // updateCredential
+    public function updateCredential(Request $request)
+    {
+     $email = $request->email;
+     $username = $request->username;
+     $password = $request->password;
+
+     $updateCredential = SellerModel::find(session('seller'));
+     $updateCredential->email=$email;
+     $updateCredential->username=$username;
+     $updateCredential->password=encrypt($password);
+     $update = $updateCredential->save();
+     $update?self::toastr(false,true,'success','Success','Credential Updated'):toastr(false,false,'error','Error','Credential Update Failed');
+    }
+    // updateCredential
+
+
 }
