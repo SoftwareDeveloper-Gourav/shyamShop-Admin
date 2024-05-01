@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ url('assets/css/dark-theme.css') }}" />
     <link rel="stylesheet" href="{{ url('assets/css/semi-dark.css') }}" />
     <link rel="stylesheet" href="{{ url('assets/css/header-colors.css') }}" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.min.css">
     <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="{{url('projectJs/sweetalert.js')}}"></script>
@@ -78,14 +79,14 @@
                 </li>
                 <li>
                     <a href="javascript:;" class="has-arrow">
-                        <div class="parent-icon"><i class="bx bx-category"></i>
+                        <div class="parent-icon"><i class="bx bx-category"></i>      
                         </div>
                         <div class="menu-title">Product Management </div>
                     </a>
                     <ul>
                         <li> <a href="{{route('seller.addProductPage')}}"><i class='bx bx-radio-circle'></i>Add Product</a>
                         </li>
-                        <li> <a href="app-chat-box.html"><i class='bx bx-radio-circle'></i>View Product</a>
+                        <li> <a href="{{route('seller.viewProduct')}}"><i class='bx bx-radio-circle'></i>View Product</a>
                         </li>
                     </ul>
                 </li>

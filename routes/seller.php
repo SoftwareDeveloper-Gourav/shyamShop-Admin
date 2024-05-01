@@ -34,6 +34,13 @@ Route::get('/seller/change-login-credential',[LoginController::class,'changeCred
 Route::post('/seller/change-credential',[LoginController::class,'updateCredential'])->name('seller.updateCredential');
 Route::get('/seller/add-product',[SellerProductController::class,'addProductPage'])->name('seller.addProductPage');
 Route::post('/seller/add-category',[SellerCategoryController::class,'addCategory']);
+Route::post('/seller/add-product',[SellerProductController::class,'productUpload']);
+Route::get('/seller/view-product',[SellerProductController::class,'viewProduct'])->name('seller.viewProduct');
+Route::get('/seller/delete-product',[SellerProductController::class,'deleteProduct']);
+Route::get('/seller/edit-product/{id}',[SellerProductController::class,'userEditPage'])->name('seller.editProduct');
+Route::get('/seller/product-filter',[SellerProductController::class,'productFilter'])->name('seller.filterProduct');                             
 });
+
+
 Route::post('/seller/signin',[LoginController::class,'login']);
 Route::get('/seller/logout',[LoginController::class,'logout'])->name('seller.logout');

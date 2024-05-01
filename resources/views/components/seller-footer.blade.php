@@ -114,6 +114,8 @@
 <script src="{{url('projectJs/alert_show.js')}}"></script>
 <script src="{{url('projectJs/confirmFunction.js')}}"></script>
 <script src="{{url('projectJs/formSubmitToastr.js')}}"></script>      
+<script src="https://cdn.datatables.net/2.0.5/js/dataTables.min.js"></script>
+    
         
 <!-- <script src="{{ url('assets/plugins/simplebar/js/simplebar.min.js') }}"></script> -->
 <script src="{{ url('assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>

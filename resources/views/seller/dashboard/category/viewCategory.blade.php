@@ -19,13 +19,13 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="d-lg-flex align-items-center mb-4 gap-3">
-							<div class="position-relative">
-								<input type="text" class="form-control ps-5 radius-30" placeholder="Search Order"> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
-							</div>
-						  <div class="ms-auto"><a href="javascript:;" class="btn btn-primary radius-30 mt-2 mt-lg-0"><i class="bx bxs-plus-square"></i>Add New Order</a></div>
+							{{-- <div class="position-relative">
+								<input type="text" class="form-control ps-5 radius-30" placeholder="Search category"> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
+							</div> --}}
+						  <div class="ms-auto"><a href="{{route('seller.addCategoryPage')}}" class="btn btn-sm btn-primary mt-2 mt-lg-0"><i class="bx bxs-plus-square"></i>Add New Order</a></div>
 						</div>
 						<div class="table-responsive">
-							<table class="table mb-0">
+							<table class="table mb-0" id="myTable">
 								<thead class="table-light">
 									<tr>
 										<th>No</th>
@@ -92,3 +92,6 @@
 	</div>
 	<!--end wrapper-->
 @include('components.seller-footer')
+<script>
+	let table = new DataTable('#myTable');
+</script>

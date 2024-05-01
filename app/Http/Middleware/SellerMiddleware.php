@@ -18,7 +18,7 @@ class SellerMiddleware
         if(session()->has('seller')){
             return $next($request);
         }else{
-            return redirect('/seller/signup');
+            return redirect('/seller/login');
         }
     }
 }

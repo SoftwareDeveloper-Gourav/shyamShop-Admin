@@ -19,7 +19,7 @@
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="{{route('seller.viewCategoryPage')}}"> <button type="button" class="btn btn-primary">View
+                    <a href="{{route('seller.viewCategoryPage')}}"> <button type="button" class="btn btn-sm btn-primary">View
                             Category</button></a>
 
                 </div>

@@ -55,9 +55,7 @@ class SellerCategoryController extends Controller
       $category_photo = $request->category_photo;
       $imgExt = $category_photo->getClientOriginalExtension();
       $imageName = time() . '.' . $imgExt;
-
-     
-    
+      
       $check_new_category = SellerCategoryModel::where([['category_name',$category_name],['category_admin',session('seller')]])->count();
       if($imgExt=="png"||$imgExt=="jpg"||$imgExt=="jpeg"||$imgExt=="webp"){
         $category_photo->move('category', $imageName);

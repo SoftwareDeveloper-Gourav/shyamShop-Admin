@@ -1,4 +1,4 @@
-@section('title','Add-Product')
+@section('title','Edit-Product')
 @include('components.seller-header')
 {{-- <link href="{{url('assets/plugins/input-tags/css/tagsinput.css ')}}" rel="stylesheet" /> --}}
 <style>
@@ -28,7 +28,7 @@
 							<ol class="breadcrumb mb-0 p-0">
 								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">Add Product</li>
+								<li class="breadcrumb-item active" aria-current="page">Update Product</li>
 							</ol>
 						</nav>
 					</div>
@@ -46,12 +46,12 @@
 			  
 				<form action="" id="formSubmit">
 
-					<input type="hidden" id="url" value="/seller/add-product">
+					<input type="hidden" id="url" value="/seller/update-product">
 					<input type="hidden" id="dataType" value="POST">
 
 					<div class="card">
 						<div class="card-body p-4">
-							<h5 class="card-title">Add New Product</h5>
+							<h5 class="card-title"> Product Edit Form</h5>
 							<hr/>
 							 <div class="form-body mt-4">
 							  <div class="row">
@@ -59,13 +59,13 @@
 								 <div class="border border-3 p-4 rounded">
 								  <div class="mb-3">
 									  <label for="inputProductTitle" class="form-label">Product Title</label>
-									  <input type="text" class="form-control" id="inputProductTitle" placeholder="Enter product title" name="title" required>
+									  <input type="text" value="{{$product->title}}" class="form-control" id="inputProductTitle" placeholder="Enter product title" name="title" required>
 									</div>
 							  
 									<div class="mb-3">
 									  <label for="">Description</label>
 									<div >
-										<textarea id="mytextarea" name="mytextarea" placeholder="Type product description" required></textarea>
+										<textarea id="mytextarea"  value="" name="mytextarea" placeholder="Type product description" required>{!! $product->description !!}</textarea>
 									</div>
 								  </div>
 									{{-- <div class="mb-3">
@@ -86,18 +86,20 @@
 									  
 										<div class="col-md-6">
 										  <label for="inputCostPerPrice" class="form-label">Price</label>
-										  <input type="number" class="form-control" id="inputCostPerPrice" placeholder="00.00" name="price" required>
+										  <input type="number" class="form-control" id="inputCostPerPrice" placeholder="00.00" name="price" value="{{$product->price}}" required>
 										</div>
 										<div class="col-md-6">
 										  <label for="inputStarPoints" class="form-label">Quantity</label>
-										  <input type="number" class="form-control" id="inputStarPoints" placeholder="Quantity of products in stock " name="quantity" required>
+										  <input type="number" class="form-control" id="inputStarPoints" placeholder="Quantity of products in stock " name="quantity" value="{{$product->quantity}}" required>
 										</div>
 										<div class="col-12">
 										  <label for="inputProductType" class="form-label">Product Type</label>
 										  <select class="form-select" id="inputProductType" required name="category">
 											<option value="">Select Product type</option>
 											  @for($i=0; $i < count($sellerCategory); $i++)
-											  <option value="{{$sellerCategory[$i]['categoryId']}}">{{$sellerCategory[$i]['categoryName']}}</option>
+											  <option value="{{$sellerCategory[$i]['categoryId']}}" @if ($sellerCategory[$i]['categoryId']==$product->product_category_id)selected
+                                                  
+                                              @endif>{{$sellerCategory[$i]['categoryName']}}</option>
 											  @endfor
 											
 											  
@@ -109,12 +111,12 @@
 										<select multiple data-role="tagsinput" name="tags[]" >
 											<option value="tag">tag</option>
 											
-										</select>
+										</select>[]
 									</div>
 										</div> --}}
 										<div class="col-12">
 											<div class="d-grid mt-3">
-											   <button type="submit" class="btn btn-primary">Save Product</button>
+											   <button type="submit" class="btn btn-primary">Update[] Product</button>
 											</div>
 										</div>
 									</div> 
