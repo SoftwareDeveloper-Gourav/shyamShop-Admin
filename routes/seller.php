@@ -13,7 +13,7 @@ Route::get('/clear',function(){
 
 
 // THIS IS SELLER ROUTE FILE 
-Route::get('/seller/login',function(){
+Route::get('/seller',function(){
     return view('seller.login');
 })->name('seller.login');
 Route::get('/seller/signup',function(){

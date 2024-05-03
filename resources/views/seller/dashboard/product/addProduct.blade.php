@@ -114,7 +114,14 @@
 										</div> --}}
 										<div class="col-12">
 											<div class="d-grid mt-3">
-											   <button type="submit" class="btn btn-primary">Save Product</button>
+											   <button type="submit" class="btn btn-primary" id="submitBtn">Save Product</button>
+
+											   <button class="btn btn-primary" type="button" disabled
+											   id="loadingBtn" style="display:none ; width:100%;"> <span
+												   class="spinner-border spinner-border-sm" role="status"
+												   aria-hidden="true"></span>
+									  		   <span class="visually-hidden" >Loading...</span>
+										   </button>
 											</div>
 										</div>
 									</div> 

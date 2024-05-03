@@ -1,4 +1,4 @@
-{{-- <!--End Back To Top Button-->
+<!--End Back To Top Button-->
 <footer class="page-footer">
     <p class="mb-0">Copyright © 2023. All right reserved.</p>
 </footer>
@@ -206,4 +206,4 @@
 
 <!-- Mirrored from codervent.com/syndron/demo/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Aug 2023 06:53:03 GMT -->
 
-</html> --}}
+</html>

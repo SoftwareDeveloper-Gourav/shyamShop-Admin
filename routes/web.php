@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::fallback(function(){
- return "SHYAM SHOP - Page Not Found..!";
+ return "SHYAM SHOP - Thank you for visiting our website. We are currently undergoing scheduled maintenance to improve your browsing experience.";
 });
