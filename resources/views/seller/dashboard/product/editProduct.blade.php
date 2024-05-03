@@ -61,6 +61,7 @@
 									  <label for="inputProductTitle" class="form-label">Product Title</label>
 									  <input type="text" value="{{$product->title}}" class="form-control" id="inputProductTitle" placeholder="Enter product title" name="title" required>
 									</div>
+									<input type="hidden" name="product_id" value="{{$product->productId}}">
 							  
 									<div class="mb-3">
 									  <label for="">Description</label>
@@ -74,10 +75,17 @@
 									</div> --}}
 									<label for="" >Choose Product images  <span class="text text-primary text-sm">( Select up to 4 Images )</span> </label>
 									<div class="mb-3 border border-3  rounded p-4" >
-										<input type="file" id="imageInput" multiple accept="image/*" name="image[]" required>
+										<input type="file" id="imageInput" multiple accept="image/*" name="image[]" >
 									</div>
 									@csrf
-									<div id="imageContainer"></div>
+									<div id="imageContainer">
+										@php
+											$image = json_decode($product->images);
+											@endphp
+										@foreach ($image as $key => $value) 
+										<img src="/products/{{$value}}" alt="image" style="border-radius: 10px;">
+										@endforeach
+									</div>
 								  </div>
 								 </div>
 								 <div class="col-lg-4">
@@ -101,8 +109,6 @@
                                                   
                                               @endif>{{$sellerCategory[$i]['categoryName']}}</option>
 											  @endfor
-											
-											  
 											</select>
 										</div>
 										{{-- <div class="col-12">
@@ -116,7 +122,7 @@
 										</div> --}}
 										<div class="col-12">
 											<div class="d-grid mt-3">
-											   <button type="submit" class="btn btn-primary">Update[] Product</button>
+											   <button type="submit" class="btn btn-primary">Update Product</button>
 											</div>
 										</div>
 									</div> 

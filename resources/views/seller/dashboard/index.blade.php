@@ -66,7 +66,7 @@
         <div class="row row-cols-1 row-cols-xl-2">
             <div class="col d-flex">
                 <div class="card radius-10 w-100">
-                    <div class="card-body">
+                    <div class="p-4">
                         <div class="d-flex align-items-center">
                             <div>
                                 <h5 class="mb-0">Top Categories</h5>

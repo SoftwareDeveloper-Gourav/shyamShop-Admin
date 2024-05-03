@@ -37,7 +37,9 @@ $("#formSubmit").validate({
             success: function (data) {
                 $("#submitBtn").show();
                 $("#loadingBtn").hide();
-                popup(data.title);
+
+                Command: toastr[data.icon](data.desc, data.title);
+
                 if (data.status) {
                     window.location = "/seller/dashboard";
                 }
@@ -45,7 +47,7 @@ $("#formSubmit").validate({
             error: function () {
                 $("#submitBtn").show();
                 $("#loadingBtn").hide();
-                popup("something wrong please try again later !");
+               Command: toastr["error"]("Something wrong , please try again later", "Error");
             },
         });
     },

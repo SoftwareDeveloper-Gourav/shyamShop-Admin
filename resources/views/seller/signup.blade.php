@@ -18,10 +18,11 @@
     <!-- Bootstrap CSS -->
     <link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/bootstrap-extended.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
     <link href="{{ url('assets/css/app.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/icons.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <title>Seller Sign up</title>
 </head>
@@ -49,9 +50,9 @@
                             <div class="card-body p-sm-5">
                                 <div class="">
                                     <div class="mb-3 text-center">
-                                        <img src="{{ url('assets/images/logo-icon.png') }}" width="60"
+                                        <img src="{{ url('assets/logo.png') }}" width="150px"
                                             alt="" />
-                                    </div>
+                                    </div> <hr>
                                     <div class="text-center mb-4">
                                         <h5 class=""> Sign up</h5>
                                         <p class="mb-0">Please fill the below details to create your account</p>
@@ -145,15 +146,18 @@
     <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script>
     <!--plugins-->
     <script src="{{ url('assets/js/jquery.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="{{url('projectJs/alert_show.js')}}"></script>
     <script src="{{ url('assets/js/formValidation.js') }}"></script>
     <script src="{{ url('assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
     <script src="{{ url('assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>
     <script src="{{ url('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="{{ url('projectJs/sellerLogin.js') }}"></script>
     <!--Password show & hide js -->
     <script>
+
         $(document).ready(function() {
+               Command: toastr[data.icon](data.desc, data.title);
             $("#show_hide_password a").on('click', function(event) {
                 event.preventDefault();
                 if ($('#show_hide_password input').attr("type") == "text") {

@@ -38,7 +38,8 @@ Route::post('/seller/add-product',[SellerProductController::class,'productUpload
 Route::get('/seller/view-product',[SellerProductController::class,'viewProduct'])->name('seller.viewProduct');
 Route::get('/seller/delete-product',[SellerProductController::class,'deleteProduct']);
 Route::get('/seller/edit-product/{id}',[SellerProductController::class,'userEditPage'])->name('seller.editProduct');
-Route::get('/seller/product-filter',[SellerProductController::class,'productFilter'])->name('seller.filterProduct');                             
+Route::get('/seller/product-filter',[SellerProductController::class,'productFilter'])->name('seller.filterProduct');
+Route::post('/seller/update-product',[SellerProductController::class,'updateProduct']);                             
 });
 
 

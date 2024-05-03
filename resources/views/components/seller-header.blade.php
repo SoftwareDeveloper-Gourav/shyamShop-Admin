@@ -46,11 +46,9 @@
         <div class="sidebar-wrapper" data-simplebar="true">
             <div class="sidebar-header">
                 <div>
-                    <img src="{{ url('assets/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
+                    <img src="{{ url('assets/logo.png') }}" class="logo-icon" alt="logo icon" style="width: 65%;">
                 </div>
-                <div>
-                    <h4 class="logo-text">Shyam</h4>
-                </div>
+               
                 <div class="toggle-icon ms-auto"><i class='bx bx-arrow-back'></i>
                 </div>
             </div>
@@ -97,11 +95,11 @@
                         <div class="menu-title">Order Management</div>
                     </a>
                     <ul>
-                        <li> <a href="content-grid-system.html"><i class='bx bx-radio-circle'></i>Grid System</a>
+                        <li> <a href="#"><i class='bx bx-radio-circle'></i>Grid System</a>
                         </li>
-                        <li> <a href="content-typography.html"><i class='bx bx-radio-circle'></i>Typography</a>
+                        <li> <a href="#"><i class='bx bx-radio-circle'></i>Typography</a>
                         </li>
-                        <li> <a href="content-text-utilities.html"><i class='bx bx-radio-circle'></i>Text
+                        <li> <a href="#"><i class='bx bx-radio-circle'></i>Text
                                 Utilities</a>
                         </li>
                     </ul>
@@ -113,11 +111,11 @@
                         <div class="menu-title">Payments</div>
                     </a>
                     <ul>
-                        <li> <a href="content-grid-system.html"><i class='bx bx-radio-circle'></i>Grid System</a>
+                        <li> <a href="#"><i class='bx bx-radio-circle'></i>Grid System</a>
                         </li>
-                        <li> <a href="content-typography.html"><i class='bx bx-radio-circle'></i>Typography</a>
+                        <li> <a href="#"><i class='bx bx-radio-circle'></i>Typography</a>
                         </li>
-                        <li> <a href="content-text-utilities.html"><i class='bx bx-radio-circle'></i>Text
+                        <li> <a href="#"><i class='bx bx-radio-circle'></i>Text
                                 Utilities</a>
                         </li>
                     </ul>
@@ -260,12 +258,7 @@
                             <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
                                         class="bx bx-home-circle fs-5"></i><span>Dashboard</span></a>
                             </li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        class="bx bx-dollar-circle fs-5"></i><span>Earnings</span></a>
-                            </li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        class="bx bx-download fs-5"></i><span>Downloads</span></a>
-                            </li>
+                           
                             <li>
                                 <div class="dropdown-divider mb-0"></div>
                             </li>

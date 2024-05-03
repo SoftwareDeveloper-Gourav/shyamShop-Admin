@@ -21,11 +21,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
     <link href="{{ url('assets/css/app.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/icons.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <title>Seller sign in</title>
 </head>
-
 <body class="">
     <!--wrapper-->
     <div class="wrapper">
@@ -50,9 +49,9 @@
                             <div class="card-body p-sm-5">
                                 <div class="">
                                     <div class="mb-3 text-center">
-                                        <img src="{{ url('assets/images/logo-icon.png') }}" width="60"
+                                        <img src="{{ url('assets/logo.png') }}" width="150px"
                                             alt="">
-                                    </div>
+                                    </div><hr>
                                     <div class="text-center mb-4">
                                         <h5 class=""> Sign in </h5>
                                         <p class="mb-0">Please log in to your account</p>
@@ -132,8 +131,9 @@
     <script src="{{ url('assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>
     <script src="{{ url('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
     <script src="{{ url('assets/js/jquery.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="{{url('projectJs/alert_show.js')}}"></script>
     <script src="{{ url('assets/js/formValidation.js') }}"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="{{ url('projectJs/sellerLogin.js') }}"></script>
 
     <!--Password show & hide js -->

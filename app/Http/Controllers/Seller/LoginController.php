@@ -26,15 +26,21 @@ class LoginController extends Controller
         $count = SellerModel::where('username',$userName)->first();
 
         if($count){
-             $response = [
-        'status'=>false,
-        'title'=>'this username already exist, please use another username to sign up.'
-       ];
+          $response = array(
+            'refresh'=> false,
+            'status' => false,
+             'icon' => "error",
+             "title" => "Error",
+             "desc"=>"This Username already exist"
+           );
         }else{
-              $response = [
-        'status'=>true,
-        'title'=>'not exist'
-       ];
+          $response = array(
+            'refresh'=> false,
+            'status' => true,
+             'icon' => "success",
+             "title" => "success",
+             "desc"=>"Ok"
+           );
        
         } 
           return $response;
@@ -43,15 +49,22 @@ class LoginController extends Controller
      public function checkEmail($email){
         $count = SellerModel::where('email',$email)->first();
         if($count){
-            $response = [
-                'status'=>false,
-                'title'=>'This Email already exist , please use another email for sign up.'
-            ];
+          $response = array(
+           'refresh'=> false,
+           'status' => false,
+            'icon' => "error",
+            "title" => "Error",
+            "desc"=>"This Email already exist"
+          );
+          
         }else{
-              $response = [
-                'status'=>true,
-                'title'=>'not exist'
-            ];
+          $response = array(
+            'refresh'=> false,
+            'status' => true,
+             'icon' => "success",
+             "title" => "Success",
+             "desc"=>"Ok"
+           );
         } 
         return $response;
      
@@ -69,11 +82,15 @@ class LoginController extends Controller
             $signUp->password = encrypt($request->password); 
             $signUp->save();
             $request->session()->put('seller',$signUp->sellerId);
-            $response = [
-                'status'=>true,
-                'title'=>'sign up successfully compleate'
-            ];
-            
+
+            $response = array(
+              'refresh'=> false,
+              'status' => true,
+               'icon' => "success",
+               "title" => "Success",
+               "desc"=>"Signed up successfull"
+             );
+             
         }else{
         $response = $emailExist;
         }
@@ -94,22 +111,31 @@ class LoginController extends Controller
       if($usernameExist){   
         $passwordCheck = decrypt($usernameExist->password) == $password;
         if($passwordCheck){
-          $response = [
-          'status'=>true,
-          'title'=>'Login Successfull'
-        ];
+          $response = array(
+            'refresh'=> false,
+            'status' => true,
+             'icon' => "success",
+             "title" => "Success",
+             "desc"=>"Login Successgull"
+           );
         $request->session()->put('seller',$usernameExist->sellerId);
         }else{
-        $response = [
-          'status'=>false,
-          'title'=>'Incorrect Password , please try again !'
-        ];
+          $response = array(
+            'refresh'=> false,
+            'status' => false,
+             'icon' => "error",
+             "title" => "Error",
+             "desc"=>"Incorrect Password"
+           );
         }
       }else{
-        $response = [
-          'status'=>false,
-          'title'=>'Incorrect username or email !'
-        ];
+        $response = array(
+          'refresh'=> false,
+          'status' => false,
+           'icon' => "error",
+           "title" => "Error",
+           "desc"=>"Incorrect Username or Email"
+         );
       }
       echo json_encode($response);
       

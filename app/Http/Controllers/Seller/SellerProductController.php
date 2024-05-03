@@ -21,6 +21,7 @@ class SellerProductController extends Controller
    ];
    echo json_encode($response);
    }
+
   // swal
 
     public function addProductPage()
@@ -59,10 +60,9 @@ class SellerProductController extends Controller
         if($imgExt=="png"||$imgExt=="jpg"||$imgExt=="jpeg"||$imgExt=="webp"){
             $imageName = rand(11111,989999).'.'.$imgExt;
             $image->move($folderPath, $imageName);
-
             return array('status'=>true,'msg'=>"Image uploaded succefull",'imageName'=>$imageName);
       }else{
-        return array('status'=>false,'msg'=>"Choose Image only",'imageName'=>$imageName);
+        return array('status'=>false,'msg'=>"Choose Image only",'imageName'=>"");
       }
     }
 
@@ -90,13 +90,12 @@ class SellerProductController extends Controller
             $imgNames[] = $data['imageName'];
         }
 
-        if(in_array(true,$checkStatus)){
+        if(in_array(false,$checkStatus)){
+            return self::toastr(false,false,"error", "Error","Choose Image only , please try again later");
+        }else{
             $productSave->images = json_encode($imgNames);
             $productSave->save();
             return self::toastr(false,true,"success", "Success","Product Uploaded Successfull");
-        }else{
-            return self::toastr(false,false,"error", "Error","Choose Image only , please try again later");
-           
         }
 
     
@@ -173,6 +172,55 @@ public function productFilter(Request $request)
 
 }
 //   productFilter 
+
+// updateProduct
+  public function updateProduct(Request $request)
+  {
+   if($request->image!=""){
+   
+      $images = $request->image;
+      $path = "products";
+        foreach ($images as $key => $value) {
+        $data = self::imageCheck($value,$path);
+            $checkStatus[] = $data['status'];
+            $imgNames[] = $data['imageName'];
+            $image=1;
+        }
+       
+   }else{
+   
+    $image = 0;
+   }
+
+   $productUpdate = ProductModel::find($request->product_id);
+    $productUpdate->title = $request->title;
+    $productUpdate->description = $request->mytextarea;
+    $productUpdate->price = $request->price;
+    $productUpdate->quantity = $request->quantity;
+    $productUpdate->product_category_id = $request->category;
+
+if($image != 0){
+  
+  if(in_array(false,$checkStatus)){
+    return self::toastr(false,false,"error", "Error","Choose Image only , please try again later");
+      }else{
+       $imgJsonNames = json_encode($imgNames);
+       $productUpdate->images=$imgJsonNames;
+       $productUpdate->save();
+   return self::toastr(false,true,"success", "Success","Product Updated Successfull");
+    }   
+    }else{
+        // echo "0";
+        // die();
+        $productUpdate->save();
+        return self::toastr(false,true,"success", "Success","Product Updated Successfull");
+   }
+
+ 
+
+
+  }
+// updateProduct
 
 //   END OF CLASS 
 

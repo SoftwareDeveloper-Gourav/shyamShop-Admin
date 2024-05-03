@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::fallback(function(){
- return "uff";
+ return "SHYAM SHOP - Page Not Found..!";
 });
