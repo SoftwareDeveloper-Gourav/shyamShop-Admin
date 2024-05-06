@@ -7,6 +7,13 @@ use App\Models\Admin;
 
 class LoginController extends Controller {
 
+    public function admin(Request $request)
+    {
+        $adminId = $request->session('admin');
+        $admin = Admin::find($adminId);
+        return $admin;
+    }
+
       // toastr 
   public function toastr($refresh,$status,$icon,$title,$desc){
     $response = [
@@ -57,5 +64,15 @@ class LoginController extends Controller {
 
     }
     // adminDashboard
+
+    // changeCredential
+    
+    public function changeCredential()
+    {
+         $admin = self::admin();
+         return view('admin.dashboard.change_credential',['admin'=>$admin]); 
+
+    }
+    // changeCredential
 
 }

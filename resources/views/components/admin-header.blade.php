@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
     <link href="{{ url('assets/css/app.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/icons.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.min.css">
     <!-- Theme Style CSS -->
     <link rel="stylesheet" href="{{ url('assets/css/dark-theme.css') }}" />
     <link rel="stylesheet" href="{{ url('assets/css/semi-dark.css') }}" />
@@ -71,11 +72,9 @@
                         <div class="menu-title">Manage Seller</div>
                     </a>
                     <ul>
-                        <li> <a href="#"><i class='bx bx-radio-circle'></i>Products</a>
+                        <li> <a href="{{route('admin.view_sellers')}}"><i class='bx bx-radio-circle'></i>View Sellers</a>
                         </li>
-                        <li> <a href="ecommerce-products-details.html"><i class='bx bx-radio-circle'></i>Product
-                                Details</a>
-                        </li>
+                       
                     </ul>
                 </li>
                 <li>
@@ -311,9 +310,9 @@
                        
                             <ul>
                             
-                                <li><a href="auth-basic-forgot-password.html" target="_blank"><i
-                                            class='bx bx-radio-circle'></i>Forgot Password</a></li>
-                                <li><a href="auth-basic-reset-password.html" target="_blank"><i
+                                <li><a href="{{route('admin.change-credential')}}"><i
+                                            class='bx bx-radio-circle'></i>Change Credentials</a></li>
+                                <li><a href="#" target="_blank"><i
                                             class='bx bx-radio-circle'></i>Reset Password</a></li>
                             </ul>
                     </ul>
@@ -718,7 +717,7 @@
                             <img src="{{ url('assets/img/logo.webp') }}" class="user-img"
                                 alt="user avatar">
                             <div class="user-info">
-                                <p class="user-name mb-0">Pauline Seitz</p>
+                                <p class="user-name mb-0">{{$admin->name}}</p>
                                 <p class="designattion mb-0">Admin</p>
                             </div>
                         </a>
