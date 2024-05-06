@@ -152,7 +152,7 @@ class LoginController extends Controller
     // logout
     public function logout(Request $request){
       $request->session()->forget('seller');
-     return redirect('/seller/login');
+     return redirect('/seller');
       
     }
     // logout

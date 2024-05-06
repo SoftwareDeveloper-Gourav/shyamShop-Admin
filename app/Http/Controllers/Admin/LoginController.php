@@ -30,6 +30,7 @@ class LoginController extends Controller {
         )->first();
 
         if($loginCheck){
+            $request->session()->put('admin',$loginCheck->admin_id);
             self::toastr(false,true,'success','Success','Login Successfull');
            
         }else{
@@ -38,5 +39,23 @@ class LoginController extends Controller {
  
 
     }
+
+    // adminLogout 
+    public function adminLogout(Request $request)
+    {
+        $request->session()->forget('admin');
+        return redirect('admin');
+
+    }
+    // adminLogout 
+
+    // adminDashboard
+    public function adminDashboard(Request $request )
+    {
+        $admin = Admin::find(session('admin'));
+        return view('admin.dashboard.index',['admin'=>$admin]);
+
+    }
+    // adminDashboard
 
 }

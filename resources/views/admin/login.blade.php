@@ -1,3 +1,9 @@
+@if(session('admin'))
+ <script>
+    window.location="/admin/dashboard";
+ </script>
+@endif
+
 <!doctype html>
 <html lang="en">
 
